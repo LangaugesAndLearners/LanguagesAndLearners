@@ -14,16 +14,23 @@
   <title></title>
 </head>
 <body>
-  <h3 id='#score'>#score</h3>
-  <h2 id='promptHeading'>#promptHeading</h2>
-  <p id='promptText'>#promptText</p>
-  <h2 id='youAreHeading'>#youAreHeading</h2>
+  <p id='#score'>#score</p>
+  <h3 id='promptHeading'>Prompt</h3>
+  <p id='promptText'  class='prompt-data'>#promptText</p>
+  <h3 id='youAreHeading'>Your Role</h3>
   <img alt="" id='youAreImg' src='https://via.placeholder.com/350x150'>
-  <p id='youAreText'>#youAreText</p>
-<!-- only static heading -->
-  <h3 id='wordBank'>Word Bank</h3>
-  <img alt="" id='vocabImg' src='https://via.placeholder.com/350x150'>
+  <p id='youAreText'  class='prompt-data'>#youAreText</p>
+  <!-- only static heading -->
+  <h3 id='wordBank'>Word to Use</h3>
+  <div class="vocab" id='a'>a </div>
+  <div class="vocab" id='b'>b</div>
+  <div class="vocab" id='c'></div>
+  <div class="vocab" id='d'></div>
+  <div id="definition">
+    <img alt="" id='vocabImg' src='https://via.placeholder.com/350x150'>
+    <p id=vocabText></p>
+  </div>
   <!-- TODO <p id='vocabText'>click on a word's info circle for help!</p> -->
-<script src="convo.js" charset="utf-8"></script>
+  <script src="convo.js" charset="utf-8"></script>
 </body>
 </html>

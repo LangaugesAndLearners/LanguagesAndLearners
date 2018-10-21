@@ -4,16 +4,21 @@ body {
   color: white;
   background: #32363d;
 }
-h2 {
+h3 {
   color: #008DB3;
 }
 img {
   display: block;
   width: 35%
 }
-button {
-    margin: 5%;
+.hide {
+  display: none;
 }
+.vocab {
+  width: 60%;
+  height: 30px;
+}
+
 #wordExplanation {
   font-style: italic;
 }
