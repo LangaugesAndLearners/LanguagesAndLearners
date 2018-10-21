@@ -63,8 +63,11 @@ $("i.fa-info-circle").on("click", function(){
 //when check is clicked
 $("i.fa-check-circle").on("click", function(){
   //strike the item thru
-  $(this).parent().css('text-decoration', 'line-through')
-
+  $(this).parent().css('text-decoration', 'line-through');
+  $(this).parent().fadeOut(function(){
+    console.log($(this).remove());
+  })
+    //console.log('d')});
   //remove it from the markup
   // //get clicked word's explanation text from data's words object
   // var expText = data.words[id].wordExplanationText;
