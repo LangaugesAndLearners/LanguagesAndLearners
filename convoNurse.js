@@ -87,6 +87,8 @@ function update(targetId) {
     $('#score span').text('500')
     var parent = $(this).parent()
     parent.removeClass('selected')
+    $('#definition #vocabText').text('')
+    $('#definition #vocabImg').attr('src','')
     var id = parent.attr('id')
     update(id)
   })
