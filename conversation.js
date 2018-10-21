@@ -17,15 +17,24 @@ var data = {
       wordExplanationText: "thermometers measure temperature",
       wordExplanationImgSrc: 'https://media.istockphoto.com/photos/thermometer-set-isolated-on-white-picture-id526560402?k=6&m=526560402&s=612x612&w=0&h=5c5FBoZe4QVA9MlomDbT_2UpTfx3j0NqxjdfIg4Eh6g=',
     },
+    word3: {
+      text: "clipboard",
+      wordExplanationText: "TODO",
+      wordExplanationImgSrc: 'https://media.istockphoto.com/photos/thermometer-set-isolated-on-white-picture-id526560402?k=6&m=526560402&s=612x612&w=0&h=5c5FBoZe4QVA9MlomDbT_2UpTfx3j0NqxjdfIg4Eh6g=',
+    },
+    word4: {
+      text: "thermometer",
+      wordExplanationText: "TODO",
+      wordExplanationImgSrc: 'https://media.istockphoto.com/photos/thermometer-set-isolated-on-white-picture-id526560402?k=6&m=526560402&s=612x612&w=0&h=5c5FBoZe4QVA9MlomDbT_2UpTfx3j0NqxjdfIg4Eh6g=',
+    },
   },
 };
-$(".word i").on("click", function(){
-  var a = $(this).parent().attr("id");
-  var b = data.words[a].text;
-  $(this).prev().text(b);
-  // console.log('click')
-})
-function init() {
+// $(".word i").on("click", function(){
+//   var a = $(this).parent().attr("id");
+//   var b = data.words[a].text;
+//   $(this).prev().text(b);
+// })
+function init(data) {
   $("#promptHeading").text(data.promptHeading)
   $("#promptText").text(data.promptText)
   $("#youAreHeading").text(data.youAreHeading)
@@ -34,11 +43,10 @@ function init() {
   $("#wordExplanationText").text(data.wordExplanationText)
   $("#wordExplanationImg").attr("src",data.wordExplanationImgSrc)
   for (var i = 0; i < 4; i++) {
-    $(".word span:eq(" + i + ")").css( "backgroundColor", "#ff0" );
-    var a = $(".word span:eq(" + i + ")").text();
-    console.log(a);
-    var b = data.words[a];
+    var a = $(".word span:eq(" + i + ")").parent().attr("id");
+    var b = data.words[a].text;
+    var c = $(".word span:eq(" + i + ")").text(b);
     console.log(b);
   };
 }
-init()
+init(data)
