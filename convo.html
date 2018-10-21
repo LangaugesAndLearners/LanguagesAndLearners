@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="convo.css">
+  <title></title>
+</head>
+<body>
+  <div id='#score'>Score: <span></span></div>
+  <h3 id='promptHeading'>Prompt</h3>
+  <p id='promptText'  class='prompt-data'>#promptText</p>
+  <h3 id='youAreHeading'>Your Role</h3>
+  <img alt="" id='youAreImg' src='https://via.placeholder.com/350x150'>
+  <p id='youAreText'  class='prompt-data'>#youAreText</p>
+  <!-- only static heading -->
+  <h3 id='wordBank'>Word to Use</h3>
+  <div class="vocab" id='a'>a </div>
+  <div class="vocab" id='b'>b</div>
+  <div class="vocab" id='c'></div>
+  <div id="definition">
+    <img alt="" id='vocabImg' src='https://via.placeholder.com/350x150'>
+    <p id=vocabText></p>
+  </div>
+  <!-- TODO <p id='vocabText'>click on a word's info circle for help!</p> -->
+  <script src="convo.js" charset="utf-8"></script>
+</body>
+</html>

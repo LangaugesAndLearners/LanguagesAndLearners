@@ -1,0 +1,29 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 25px;
+  color: white;
+  background: #32363d;
+}
+h3 {
+  color: #008DB3;
+}
+img {
+  display: block;
+  width: 35%
+}
+.hide {
+  display: none;
+}
+.vocab {
+  width: 60%;
+  height: 30px;
+}
+.selected {
+  background: red;
+}
+#wordExplanation {
+  font-style: italic;
+}
+div {
+  margin-bottom: 20px;
+}
