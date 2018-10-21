@@ -1,56 +1,28 @@
 var data =
 {
- promptText: "Infirmière demandant un congé au médecin \n (Nurse asking doctor for a leave)",
- youAreImgSrc: "https://img.freepik.com/free-vector/doctor-character-background_1270-84.jpg?size=338&ext=jpg",
- youAreText: "médecin (the doctor)",
- vocab: [
-   {
-     vocabWord: "schedule",
-     vocabText: "programme",
-     vocabImgSrc: "https://openclipart.org/download/227546/Tomorrow.svg",
-   },
-   {
-     vocabWord: "surgery",
-     vocabText: "chirurgie",
-     vocabImgSrc: 'https://openclipart.org/download/252022/1465837873.svg',
-   },
-   {
-     vocabWord: "aspirin",
-     vocabText: "aspirine",
-     vocabImgSrc: 'https://openclipart.org/download/304329/1532106125.svg',
-   },
-   {
-     vocabWord: "night shift",
-     vocabText: "quart de nuit",
-     vocabImgSrc: 'https://openclipart.org/download/260385/landscape-at-night.svg',
-   },
- ],
-}
-var dataOO =
-{
- promptText: "Nurse asking doctor for a leave \n hey",
- youAreImgSrc: "https://img.freepik.com/free-vector/doctor-character-background_1270-84.jpg?size=338&ext=jpg",
- youAreText: "the nurse",
+ promptText: "医者に休暇を頼んでる看護婦 \n (Nurse asking doctor for a leave)",
+ youAreImgSrc: "http://getdrawings.com/cliparts/male-nurse-clipart-1.jpg",
+ youAreText: "看護婦 (the nurse)",
  vocab: [
    {
      vocabWord: "vacation",
      vocabText: "有休",
-     vocabImgSrc: "https://image.shutterstock.com/image-photo/anatomical-tweezers-isolated-on-white-260nw-529351978.jpg",
+     vocabImgSrc: "http://worldartsme.com/images/rest-clipart-1.jpg",
    },
    {
      vocabWord: "stress",
      vocabText: "ストレス",
-     vocabImgSrc: 'https://media.istockphoto.com/photos/thermometer-set-isolated-on-white-picture-id526560402?k=6&m=526560402&s=612x612&w=0&h=5c5FBoZe4QVA9MlomDbT_2UpTfx3j0NqxjdfIg4Eh6g=',
+     vocabImgSrc: 'https://cf.ltkcdn.net/stress/images/std/189518-425x425-Funny-Stressful-Clipart-2.jpg',
    },
    {
      vocabWord: "migraine",
      vocabText: "頭が痛い",
-     vocabImgSrc: 'https://images-na.ssl-images-amazon.com/images/I/91ZkmwMJbWL._AC_SS350_.jpg',
+     vocabImgSrc: 'https://cf.ltkcdn.net/stress/images/orig/189518-500x500-Funny-Stressful-Clipart-2.jpg',
    },
    {
      vocabWord: "medicine",
      vocabText: "薬",
-     vocabImgSrc: 'https://cdn.shopify.com/s/files/1/0535/3509/products/Black_Pen_1024x1024_f2fbd04b-d2a3-4ba2-ba3c-508ef4e65ad2_large.jpg?v=1502887399',
+     vocabImgSrc: 'https://upload.wikimedia.org/wikipedia/commons/7/76/Medicine_Drugs.svg',
    },
  ],
 }
