@@ -19,22 +19,18 @@ var data = {
     },
     word3: {
       text: "clipboard",
-      wordExplanationText: "TODO",
-      wordExplanationImgSrc: 'https://media.istockphoto.com/photos/thermometer-set-isolated-on-white-picture-id526560402?k=6&m=526560402&s=612x612&w=0&h=5c5FBoZe4QVA9MlomDbT_2UpTfx3j0NqxjdfIg4Eh6g=',
+      wordExplanationText: "clipboards hold paper",
+      wordExplanationImgSrc: 'https://images-na.ssl-images-amazon.com/images/I/91ZkmwMJbWL._AC_SS350_.jpg',
     },
     word4: {
-      text: "thermometer",
-      wordExplanationText: "TODO",
-      wordExplanationImgSrc: 'https://media.istockphoto.com/photos/thermometer-set-isolated-on-white-picture-id526560402?k=6&m=526560402&s=612x612&w=0&h=5c5FBoZe4QVA9MlomDbT_2UpTfx3j0NqxjdfIg4Eh6g=',
+      text: "pens",
+      wordExplanationText: "pens write",
+      wordExplanationImgSrc: 'https://cdn.shopify.com/s/files/1/0535/3509/products/Black_Pen_1024x1024_f2fbd04b-d2a3-4ba2-ba3c-508ef4e65ad2_large.jpg?v=1502887399',
     },
   },
 };
-// $(".word i").on("click", function(){
-//   var a = $(this).parent().attr("id");
-//   var b = data.words[a].text;
-//   $(this).prev().text(b);
-// })
-function init(data) {
+
+function init() {
   $("#promptHeading").text(data.promptHeading)
   $("#promptText").text(data.promptText)
   $("#youAreHeading").text(data.youAreHeading)
@@ -42,11 +38,24 @@ function init(data) {
   $("#youAreText").text(data.youAreText)
   $("#wordExplanationText").text(data.wordExplanationText)
   $("#wordExplanationImg").attr("src",data.wordExplanationImgSrc)
+//loop over vocabularly words, inserting word names into markup
   for (var i = 0; i < 4; i++) {
-    var a = $(".word span:eq(" + i + ")").parent().attr("id");
-    var b = data.words[a].text;
-    var c = $(".word span:eq(" + i + ")").text(b);
-    console.log(b);
+    var id = $(".word span:eq(" + i + ")").parent().attr("id");
+    var name = data.words[id].text;
+    $(".word span:eq(" + i + ")").text(name);
   };
 }
-init(data)
+init()
+//when vocab info is clicked
+$(".word i").on("click", function(){
+  //get id of clicked word
+  var id = $(this).parent().attr("id");
+  //get clicked word's explanation text from data's words object
+  var expText = data.words[id].wordExplanationText;
+  //display explanation text in explanation section
+  $("#wordExplanationText").text(expText);
+  //get clicked word's explanation img from data's words object
+  var expImg = data.words[id].wordExplanationImgSrc;
+  //display explanation image in explanation section
+  $("#wordExplanationImg").attr("src", expImg);
+})
