@@ -62,72 +62,21 @@ function update(targetId) {
     ' </span> <i class="fa fa-info-circle"></i>  <i class="fa fa-check-circle"></i>'
   )
   jqTarget.attr('id', vocabIndex)
+  //info circle event listener
+  $("#" + jqTarget.attr('id') + " i.fa-info-circle").on("click", function(){
+    var id = $(this).parent().attr('id')
+    $('#definition #vocabText').text(data[0].vocab[id].vocabText)
+    $('#definition #vocabImg').attr('src',data[0].vocab[id].vocabImgSrc)
+  })
+
+  $("#" + jqTarget.attr('id') + " i.fa-check-circle").on("click", function(){
+    console.log($(this).parent().attr('id'))
+    var next =$(this).parent().attr('id')
+    update(next)
+  })
   vocabIndex++
 }
 update("a")
 update('b')
 update('c')
 update('d')
-
-//console.log(vocabIndex)
-//when vocab info is clicked, show definition text and image
-$("i.fa-info-circle").on("click", function(){
-  var id = $(this).parent().attr('id')
-  //console.log($(this).parent().attr('id'))
-  //$('#definition #vocabText').text($(this).parent().attr('id'))
-  $('#definition #vocabText').text(data[0].vocab[id].vocabText)
-  $('#definition #vocabImg').attr('src',data[0].vocab[id].vocabImgSrc)
-
-
-  //var def = $(this).parent().next('.definition')
-  //  def.toggleClass('hide')
-  //def.slideToggle();
-
-  //$(this).next('.definition').toggleClass('hide');
-  // //get id of clicked word
-  // var id = $(this).parent().attr("id");
-  // //get clicked word's explanation text from data's vocab object
-  // var expText = data[0].vocab[id].vocabText;
-  // console.log(expText);
-  // //display explanation text in explanation section
-  // $("#vocabImg").next().text(expText);
-  // //get clicked word's explanation img from data's vocab object
-  // var expImg = data[0].vocab[0].vocabImgSrc;
-  // //display explanation image in explanation section
-  // $("#vocabImg").attr("src", expImg);
-})
-
-//when check is clicked
-$("i.fa-check-circle").on("click", function(){
-  console.log($(this).parent().attr('id'))
-  var next =$(this).parent().attr('id')
-  update(next)
-
-  // //strike the item thru
-  // $(this).parent().css('text-decoration', 'line-through');
-  // //fade out and remove the item
-  // $(this).parent().fadeOut(function() {
-  //   console.log(this.parent().attr('id'))
-  //   refresh($(this).parent().attr('id'))
-  // //get new vocab word
-  // var text = data.vocab[vocabIndex].vocabWord;
-  // //replace deleted text with new vocab word
-  // $(".word span:eq(" + this.id + ")").text(text);
-  // $(this).css('text-decoration', 'none');
-  // $(this).show();
-})
-//takes data.vocab index and creates option cards for each
-
-
-// function generate(in){
-//   var out = <p>;
-//
-// }
-// for (var i = 0; i < 4; i++) {
-//   generate(data.vocab[i])
-// }
-
-// <span class = 'word' id='0'>
-//   <span></span>
-//   <i class="fa fa-info-circle"></i>
-//   <i class="fa fa-check-circle"></i>
