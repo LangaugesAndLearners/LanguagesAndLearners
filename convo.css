@@ -1,0 +1,22 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 25px;
+  color: white;
+  background: #32363d;
+}
+h2 {
+  color: #008DB3;
+}
+img {
+  display: block;
+  width: 35%
+}
+button {
+    margin: 5%;
+}
+#wordExplanation {
+  font-style: italic;
+}
+div {
+  margin-bottom: 20px;
+}

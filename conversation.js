@@ -34,7 +34,9 @@ var data = {
 };
 //TODO DRY add init class and script thru it
 function init() {
-  $("#promptHeading").text(data.promptHeading)
+  $("h2, p").css('color', 'red');
+  $("#promptHeading").text(data.prom
+    ptHeading)
   $("#promptText").text(data.promptText)
   $("#youAreHeading").text(data.youAreHeading)
   $("#youAreImg").attr("src",data.youAreImgSrc)
@@ -80,3 +82,18 @@ $("i.fa-check-circle").on("click", function(){
   });
 
 })
+//takes data.vocab index and creates option cards for each
+
+TODO
+// function generate(in){
+//   var out = <p>;
+//
+// }
+// for (var i = 0; i < 4; i++) {
+//   generate(data.vocab[i])
+// }
+
+// <span class = 'word' id='0'>
+//   <span></span>
+//   <i class="fa fa-info-circle"></i>
+//   <i class="fa fa-check-circle"></i>
