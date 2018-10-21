@@ -6,64 +6,77 @@ var data = {
   youAreText: 'you are text........',
   vocab: [
     {
-      text: "tweezers",
-      wordExplanationText: "tweezers pull things",
-      wordExplanationImgSrc: "https://image.shutterstock.com/image-photo/anatomical-tweezers-isolated-on-white-260nw-529351978.jpg",
+      vocabWord: "tweezers",
+      vocabText: "tweezers pull things",
+      vocabImgSrc: "https://image.shutterstock.com/image-photo/anatomical-tweezers-isolated-on-white-260nw-529351978.jpg",
     },
     {
-      text: "thermometer",
-      wordExplanationText: "thermometers measure temperature",
-      wordExplanationImgSrc: 'https://media.istockphoto.com/photos/thermometer-set-isolated-on-white-picture-id526560402?k=6&m=526560402&s=612x612&w=0&h=5c5FBoZe4QVA9MlomDbT_2UpTfx3j0NqxjdfIg4Eh6g=',
+      vocabWord: "thermometer",
+      vocabText: "thermometers measure temperature",
+      vocabImgSrc: 'https://media.istockphoto.com/photos/thermometer-set-isolated-on-white-picture-id526560402?k=6&m=526560402&s=612x612&w=0&h=5c5FBoZe4QVA9MlomDbT_2UpTfx3j0NqxjdfIg4Eh6g=',
     },
     {
-      text: "clipboard",
-      wordExplanationText: "clipboards hold paper",
-      wordExplanationImgSrc: 'https://images-na.ssl-images-amazon.com/images/I/91ZkmwMJbWL._AC_SS350_.jpg',
+      vocabWord: "clipboard",
+      vocabText: "clipboards hold paper",
+      vocabImgSrc: 'https://images-na.ssl-images-amazon.com/images/I/91ZkmwMJbWL._AC_SS350_.jpg',
     },
     {
-      text: "pens",
-      wordExplanationText: "pens write",
-      wordExplanationImgSrc: 'https://cdn.shopify.com/s/files/1/0535/3509/products/Black_Pen_1024x1024_f2fbd04b-d2a3-4ba2-ba3c-508ef4e65ad2_large.jpg?v=1502887399',
+      vocabWord: "pens",
+      vocabText: "pens write",
+      vocabImgSrc: 'https://cdn.shopify.com/s/files/1/0535/3509/products/Black_Pen_1024x1024_f2fbd04b-d2a3-4ba2-ba3c-508ef4e65ad2_large.jpg?v=1502887399',
     },
+    {
+      vocabWord: 'needle',
+      vocabText: 'needles pierce skin',
+      vocabImgSrc: 'https://cdn.shopify.com/s/files/1/1023/1451/products/EXE26111_large.jpeg?v=1487277214',
+    }
   ],
 };
-//TODO DRY
+//TODO DRY add init class and script thru it
 function init() {
   $("#promptHeading").text(data.promptHeading)
   $("#promptText").text(data.promptText)
   $("#youAreHeading").text(data.youAreHeading)
   $("#youAreImg").attr("src",data.youAreImgSrc)
   $("#youAreText").text(data.youAreText)
-  $("#wordExplanationText").text(data.wordExplanationText)
-  $("#wordExplanationImg").attr("src",data.wordExplanationImgSrc)
+  $("#vocabText").text(data.vocabText)
+  $("#vocabImg").attr("src",data.vocabImgSrc)
 //loop over vocab array, inserting vocab text into markup
   for (var i = 0; i < 4; i++) {
-    //var id = $(".word span:eq(" + i + ")").parent().attr("id");
-    var vocabText = data.vocab[i].text;
-    $(".word span:eq(" + i + ")").text(vocabText);
+    var text = data.vocab[i].vocabWord;
+    $(".word span:eq(" + i + ")").text(text);
   };
 }
 init()
+var vocabIndex = 4;
 //when vocab info is clicked, show definition text and image
 $("i.fa-info-circle").on("click", function(){
   //get id of clicked word
   var id = $(this).parent().attr("id");
   //get clicked word's explanation text from data's vocab object
-  var expText = data.vocab[id].wordExplanationText;
+  var expText = data.vocab[id].vocabText;
   //display explanation text in explanation section
-  $("#wordExplanationText").text(expText);
+  $("#vocabText").text(expText);
   //get clicked word's explanation img from data's vocab object
-  var expImg = data.vocab[id].wordExplanationImgSrc;
+  var expImg = data.vocab[id].vocabImgSrc;
   //display explanation image in explanation section
-  $("#wordExplanationImg").attr("src", expImg);
+  $("#vocabImg").attr("src", expImg);
 })
 
 //when check is clicked
 $("i.fa-check-circle").on("click", function(){
   //strike the item thru
   $(this).parent().css('text-decoration', 'line-through');
-  $(this).parent().fadeOut(function(){
-    console.log($(this).remove());
-  })
+  //fade out and remove the item
+  $(this).parent().fadeOut(function() {
+    //get new vocab word
+    var text = data.vocab[vocabIndex].vocabWord;
+    //replace deleted text with new vocab word
+    $(".word span:eq(" + this.id + ")").text(text);
+    $(this).css('text-decoration', 'none');
+
+    $(this).show();
+    vocabIndex++;
+  });
 
 })
