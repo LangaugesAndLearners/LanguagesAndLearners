@@ -29,7 +29,7 @@ var data = {
     },
   },
 };
-
+//TODO DRY
 function init() {
   $("#promptHeading").text(data.promptHeading)
   $("#promptText").text(data.promptText)
@@ -47,7 +47,7 @@ function init() {
 }
 init()
 //when vocab info is clicked
-$(".word i").on("click", function(){
+$("i.fa-info-circle").on("click", function(){
   //get id of clicked word
   var id = $(this).parent().attr("id");
   //get clicked word's explanation text from data's words object
@@ -58,4 +58,20 @@ $(".word i").on("click", function(){
   var expImg = data.words[id].wordExplanationImgSrc;
   //display explanation image in explanation section
   $("#wordExplanationImg").attr("src", expImg);
+})
+
+//when check is clicked
+$("i.fa-check-circle").on("click", function(){
+  //strike the item thru
+  $(this).parent().css('text-decoration', 'line-through')
+
+  //remove it from the markup
+  // //get clicked word's explanation text from data's words object
+  // var expText = data.words[id].wordExplanationText;
+  // //display explanation text in explanation section
+  // $("#wordExplanationText").text(expText);
+  // //get clicked word's explanation img from data's words object
+  // var expImg = data.words[id].wordExplanationImgSrc;
+  // //display explanation image in explanation section
+  // $("#wordExplanationImg").attr("src", expImg);
 })
