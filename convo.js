@@ -29,13 +29,15 @@ var data =
       vocabText: 'needles pierce skin',
       vocabImgSrc: 'https://cdn.shopify.com/s/files/1/1023/1451/products/EXE26111_large.jpeg?v=1487277214',
     },
+    {
+      vocabWord: 'boo',
+      vocabText: 'bear',
+      vocabImgSrc: 'https://cdn.shopify.com/s/files/1/1023/1451/products/EXE26111_large.jpeg?v=1487277214',
+    },
   ],
 }]
 
 function init() {
-  // $.each($(".prompt-data"), function() {
-  //   $(this).text(data[0][this.id])
-  // })
   $('#promptText').text(data[0].promptText)
   $('#youAreImg').attr("src", data[0].youAreImgSrc)
   $('#youAreText').text(data[0].youAreText)
@@ -59,11 +61,6 @@ function update(targetId) {
     '<span class="vocabWord">' +  word.vocabWord +
     ' </span> <i class="fa fa-info-circle"></i>  <i class="fa fa-check-circle"></i>'
   )
-
-  // // $("#" + target)
-  //
-  // $('.vocab').html(word.vocabWord + ' <i class="fa fa-info-circle"></i>  <i class="fa fa-check-circle"></i>')
-  // $('.vocab .definition').html(word.vocabText )
   jqTarget.attr('id', vocabIndex)
   vocabIndex++
 }
@@ -75,20 +72,18 @@ update('d')
 //console.log(vocabIndex)
 //when vocab info is clicked, show definition text and image
 $("i.fa-info-circle").on("click", function(){
-    var id = $(this).parent().attr('id')
-    //console.log($(this).parent().attr('id'))
-    //$('#definition #vocabText').text($(this).parent().attr('id'))
-    $('#definition #vocabText').text(data[0].vocab[id].vocabText)
-    $('#definition #vocabImg').attr('src',data[0].vocab[id].vocabImgSrc)
-
-
+  var id = $(this).parent().attr('id')
+  //console.log($(this).parent().attr('id'))
+  //$('#definition #vocabText').text($(this).parent().attr('id'))
+  $('#definition #vocabText').text(data[0].vocab[id].vocabText)
+  $('#definition #vocabImg').attr('src',data[0].vocab[id].vocabImgSrc)
 
 
   //var def = $(this).parent().next('.definition')
-//  def.toggleClass('hide')
+  //  def.toggleClass('hide')
   //def.slideToggle();
 
-//$(this).next('.definition').toggleClass('hide');
+  //$(this).next('.definition').toggleClass('hide');
   // //get id of clicked word
   // var id = $(this).parent().attr("id");
   // //get clicked word's explanation text from data's vocab object
@@ -104,23 +99,26 @@ $("i.fa-info-circle").on("click", function(){
 
 //when check is clicked
 $("i.fa-check-circle").on("click", function(){
-  //strike the item thru
-  $(this).parent().css('text-decoration', 'line-through');
-  //fade out and remove the item
-  $(this).parent().fadeOut(function() {
-    //get new vocab word
-    var text = data.vocab[vocabIndex].vocabWord;
-    //replace deleted text with new vocab word
-    $(".word span:eq(" + this.id + ")").text(text);
-    $(this).css('text-decoration', 'none');
+  console.log($(this).parent().attr('id'))
+  var next =$(this).parent().attr('id')
+  update(next)
 
-    $(this).show();
-    vocabIndex++;
-  })
+  // //strike the item thru
+  // $(this).parent().css('text-decoration', 'line-through');
+  // //fade out and remove the item
+  // $(this).parent().fadeOut(function() {
+  //   console.log(this.parent().attr('id'))
+  //   refresh($(this).parent().attr('id'))
+  // //get new vocab word
+  // var text = data.vocab[vocabIndex].vocabWord;
+  // //replace deleted text with new vocab word
+  // $(".word span:eq(" + this.id + ")").text(text);
+  // $(this).css('text-decoration', 'none');
+  // $(this).show();
 })
 //takes data.vocab index and creates option cards for each
 
-//TODO
+
 // function generate(in){
 //   var out = <p>;
 //
